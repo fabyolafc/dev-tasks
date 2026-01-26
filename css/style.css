@@ -1,0 +1,335 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* =====================
+   RESET + VARIÁVEIS
+===================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    font-family: "Poppins", sans-serif;
+}
+
+:root {
+    --color-primary: #791B78;
+    --color-primary-light: #9A4999;
+    --color-secondary: #BC78BB;
+    --color-secondary-light: #ffccff;
+    --fundo: #f6f2fa;
+    --branco: #ffffff;
+    --texto: #2c2c2c;
+    --color-hover: #ffd700;
+}
+
+body {
+    background-color: var(--fundo);
+    color: var(--texto);
+    line-height: 1.5;
+}
+
+header {
+    background-color: var(--color-primary, #2c3e50);
+    color: var(--color-secondary-light, #f9f9f9);
+    padding: 40px 16px;
+    text-align: center;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.header-titulo {
+    font-size: 2rem;
+    margin: 0 0 8px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}
+
+.header-paragrafo {
+    font-size: 1rem;
+    margin: 0;
+    font-weight: 400;
+    color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    gap: 4px;
+}
+
+.header-titulo i,
+.header-paragrafo i {
+    color: #ffd700;
+    font-size: 1.4rem;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px 0;
+
+}
+
+.section-principal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    margin: 20px 20px 0 20px;
+}
+
+.main-imagem {
+    width: 100%;
+    max-width: 400px;
+    padding: 0 16px;
+}
+
+.adicionar-tarefa {
+    background-color: var(--branco);
+    margin: 16px;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    max-width: 500px;
+    width: 100%;
+}
+
+.section-subtitulo {
+    color: var(--color-primary);
+    margin-bottom: 16px;
+}
+
+.form-adicionar-tarefa {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-adicionar-tarefa input,
+.form-adicionar-tarefa select {
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    background-color: var(--color-secondary-light);
+}
+
+.form-adicionar-tarefa input::placeholder, select {
+    color: var(--texto);
+}
+
+.form-adicionar-tarefa input:focus,
+.form-adicionar-tarefa select:focus {
+    outline: 2px solid var(--color-primary);
+}
+
+.form-adicionar-tarefa button {
+    margin-top: 12px;
+    padding: 14px;
+    background-color: var(--color-primary);
+    color: var(--color-secondary-light);
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.form-adicionar-tarefa button:hover {
+    background-color: var(--color-primary-light);
+}
+
+.container-lista-tarefa {
+    margin: 40px 20px 0 20px;
+}
+
+.div-tarefas {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    background-color: #f9f9f9; /* fundo leve */
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* sombra suave */
+}
+
+.div-tarefas h2 {
+    color: var(--color-primary, #2c3e50);
+    font-size: 1.25rem;
+    margin: 0;
+}
+
+.div-tarefas button {
+    padding: 8px 16px;
+    font-size: 0.85rem;
+    background-color: var(--color-secondary-light);
+    color: var(--texto);
+    border: 1px solid var(--color-secondary);
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.div-tarefas button:hover {
+    background-color: var(--color-secondary);
+    color: #fff;
+    transform: scale(1.05);
+}
+
+.lista-tarefa {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 16px;
+}
+
+.article-tarefas {
+    background-color: var(--branco);
+    border-radius: 12px;
+    padding: 16px;
+    border-left: 6px solid var(--color-primary);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.article-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.info-tarefa {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+}
+
+.article-titulo {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.article-descricao {
+    font-size: 0.8rem;
+    color: #555;
+}
+
+/* Status ao lado */
+.status-tarefa {
+    padding: 6px 12px;
+    font-size: 0.65rem;
+    font-weight: 600;
+    border-radius: 50px;
+    white-space: nowrap;
+}
+
+.status-tarefa.aFazer {
+    background-color: #fff7ed;
+    border: 2px solid #f59e0b;
+    color: #92400e;
+}
+
+.status-tarefa.emAndamento {
+    background-color: #eff6ff;
+    border: 2px solid #3b82f6;
+    color: #1e40af;
+}
+
+.status-tarefa.concluido {
+    background-color: #ecfdf5;
+    border: 2px solid #22c55e;
+    color: #166534;
+}
+
+.data-criacao {
+    display: flex;
+    gap: 6px;
+    font-size: 0.75rem;
+}
+
+.data-criacao i {
+    margin-right: 4px;
+    color: var(--color-primary);
+}
+
+.data-criacao span {
+    padding: 4px 10px;
+    border-radius: 50px;
+    background-color: var(--color-secondary-light);
+    border: 1px solid var(--color-secondary);
+}
+
+.buttons-acoes button {
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    color: var(--color-primary);
+    background-color: transparent;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+footer {
+    background-color: var(--color-primary, #2c3e50);
+    padding: 20px 16px;
+    text-align: center;
+    margin-top: 40px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.footer-paragrafo {
+    color: var(--color-secondary-light, #f9f9f9);
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.footer-sociais {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+
+.footer-sociais a {
+    color: var(--color-secondary-light, #f9f9f9);
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.footer-sociais a:hover {
+    color: var(--color-hover);
+    transform: scale(1.2);
+}
+
+
+@media (min-width: 768px) {
+    .section-principal {
+        flex-direction: row-reverse;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .lista-tarefa {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .container-tarefas {
+        width: 45%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .adicionar-tarefa {
+        max-width: 600px;
+    }
+}
+
+

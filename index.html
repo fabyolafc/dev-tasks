@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tarefas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <header>
+        <h1 class="header-titulo">
+            <i class="fa-solid fa-list-check"></i> Lista de Tarefas
+        </h1>
+        <p class="header-paragrafo">
+            <i class="fa-solid fa-lightbulb"></i> Organize suas tarefas de forma simples e eficiente
+        </p>
+    </header>
+    <main>
+        <section class="section-principal">
+            <img class="main-imagem" src="./img/meninaEstudando.png" alt="Imagem de menina estudando">
+            <div class="adicionar-tarefa">
+                <h2 class="section-subtitulo">Nova Tarefa</h2>
+                <form class="form-adicionar-tarefa">
+                    <label for="idTitulo">Titulo</label>
+                    <input type="text" id="idTitulo" name="titulo" placeholder="Digite o titulo da tarefa" required>
+
+                    <label for="idDescricao">Descrição</label>
+                    <input type="text" id="idDescricao" name="descricao" placeholder="Descreva a tarefa">
+
+                    <label for="idStatus">Status</label>
+                    <select name="status" id="idStatus">
+                        <option value="a fazer">A fazer</option>
+                        <option value="em andamento">Em andamento</option>
+                        <option value="concluída">Concluída</option>
+                    </select>
+
+                    <button type="submit">Adicionar Tarefa</button>
+                </form>
+            </div>
+
+        </section>
+
+        <section class="container-lista-tarefa">
+            <div class="div-tarefas">
+                <h2>Tarefas</h2>
+                <button>0 tarefa</button>
+            </div>
+
+            <ul id="listaTarefas" class="lista-tarefa">
+
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p class="footer-paragrafo">
+            Desenvolvido por &copy; Fabyola Campos 2026
+        </p>
+        <div class="footer-sociais">
+            <a href="https://www.linkedin.com/in/fabyola-campos" target="_blank" aria-label="LinkedIn">
+                <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/fabyolafc" target="_blank" aria-label="GitHub">
+                <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://www.instagram.com/fabyolacampos" target="_blank" aria-label="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script type="module" src="./js/script.js"></script>
+</body>
+
+</html>
