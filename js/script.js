@@ -89,6 +89,8 @@ function preencherFormulario() {
             document.getElementById('idTitulo').value = titulo;
             document.getElementById('idDescricao').value = descricao;
             document.getElementById('idStatus').value = status;
+
+            document.querySelector('.adicionar-tarefa').scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
     });
 }
