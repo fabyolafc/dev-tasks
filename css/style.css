@@ -306,6 +306,11 @@ main {
     cursor: pointer;
 }
 
+.buttons-acoes button:hover {
+    color: var(--color-primary-light);
+    background-color: var(--color-secondary-light);
+}
+
 footer {
     background-color: var(--color-primary, #2c3e50);
     padding: 20px 16px;
