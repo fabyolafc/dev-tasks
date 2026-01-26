@@ -176,6 +176,39 @@ main {
     transform: scale(1.05);
 }
 
+.campo-pesquisa {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  margin: 16px auto;
+}
+
+.campo-pesquisa i {
+  position: absolute;
+  top: 50%;
+  left: 14px;
+  transform: translateY(-50%);
+
+  color: var(--color-primary); 
+  font-size: 1rem;
+  pointer-events: none;
+}
+
+.pesquisa-tarefa {
+  width: 100%;
+  padding: 12px 14px 12px 42px; 
+  font-size: 16px;
+  border: 1px solid var(--color-secondary);
+  border-radius: 8px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.pesquisa-tarefa:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(121, 27, 120, 0.2); /* roxo suave */
+}
+
 .lista-tarefa {
     display: flex;
     flex-direction: column;

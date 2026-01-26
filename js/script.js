@@ -95,6 +95,30 @@ function preencherFormulario() {
 
 preencherFormulario();
 
+function filtrarTarefas() {
+    const inputFiltro = document.getElementById('filtroTarefas');
+
+    inputFiltro.addEventListener('input', () => {
+        const textoFiltro = inputFiltro.value.toLowerCase();
+        const tarefas = document.querySelectorAll('#listaTarefas li');
+
+        tarefas.forEach((tarefa) => {
+            const titulo = tarefa
+                .querySelector('.article-titulo')
+                .textContent
+                .toLowerCase();
+
+            if (titulo.includes(textoFiltro)) {
+                tarefa.style.display = 'block';
+            } else {
+                tarefa.style.display = 'none';
+            }
+        });
+    });
+}
+filtrarTarefas();
+
+
 // function postTarefa() {
 //     const form = document.querySelector('.form-adicionar-tarefa');
 
