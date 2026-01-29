@@ -59,5 +59,43 @@ function atualizarContagem(tarefas) {
     divTarefas.textContent = `${quantidade} ${quantidade === 1 ? 'tarefa' : 'tarefas'}`;
 }
 
+function filtrarTarefasPorStatus() {
+    document.querySelectorAll(".filtro-status button").forEach(botao => {
+        botao.addEventListener("click", () => {
+            const statusSelecionado = botao.dataset.status;
+
+            // remover ativo de todos
+            document.querySelectorAll(".filtro-status button")
+                .forEach(btn => btn.classList.remove("ativo"));
+
+            // adicionar ativo ao clicado
+            botao.classList.add("ativo");
+
+            // Filtrar as tarefas visualmente
+            const todasAsTarefas = document.querySelectorAll('#listaTarefas li');
+            let tarefasVisiveis = 0;
+
+            todasAsTarefas.forEach(tarefaLi => {
+                const statusTarefa = tarefaLi.querySelector('.status-tarefa').textContent.toLowerCase();
+
+                if (statusSelecionado === "todos") {
+                    tarefaLi.style.display = 'block';
+                    tarefasVisiveis++;
+                } else if (statusTarefa === statusSelecionado.toLowerCase()) {
+                    tarefaLi.style.display = 'block';
+                    tarefasVisiveis++;
+                } else {
+                    tarefaLi.style.display = 'none';
+                }
+            });
+
+            // Atualizar contagem
+            const divTarefas = document.querySelector('.div-tarefas button');
+            divTarefas.textContent = `${tarefasVisiveis} ${tarefasVisiveis === 1 ? 'tarefa' : 'tarefas'}`;
+        });
+    });
+}
+
+filtrarTarefasPorStatus();
 
 
